@@ -1,0 +1,374 @@
+:root {
+  --accessibility-font-size: 100%;
+  --accessibility-line-height: 1.5;
+}
+
+html {
+  font-size: var(--accessibility-font-size);
+}
+
+html body {
+  line-height: var(--accessibility-line-height);
+}
+
+html.accessibility-letter-spacing body {
+  letter-spacing: 0.04em;
+  word-spacing: 0.09em;
+}
+
+html.accessibility-high-contrast body {
+  background: #f7f7f5 !important;
+  color: #111111 !important;
+}
+
+html.accessibility-high-contrast *:not(.accessibility-button):not(.accessibility-panel):not(.accessibility-header):not(.close-accessibility):not(.accessibility-content):not(.accessibility-content button):not(.accessibility-content section):not(.reading-guide):not(.reading-mask):not(.vlibras-button-wrapper):not(.vw-plugin-top-wrapper):not(.enabled) {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+  color: #111111 !important;
+  border-color: rgba(17, 17, 17, 0.7) !important;
+  box-shadow: none !important;
+}
+
+html.accessibility-high-contrast .accessibility-button,
+html.accessibility-high-contrast .accessibility-panel,
+html.accessibility-high-contrast .accessibility-header,
+html.accessibility-high-contrast .close-accessibility,
+html.accessibility-high-contrast .accessibility-content,
+html.accessibility-high-contrast .accessibility-content button,
+html.accessibility-high-contrast .reset-accessibility,
+html.accessibility-high-contrast .vlibras-button-wrapper,
+html.accessibility-high-contrast .vw-plugin-top-wrapper,
+html.accessibility-high-contrast .reading-guide,
+html.accessibility-high-contrast .reading-mask {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: inherit !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+html.accessibility-high-contrast img,
+html.accessibility-high-contrast video,
+html.accessibility-high-contrast svg,
+html.accessibility-high-contrast canvas {
+  background-color: transparent !important;
+  filter: brightness(1.08) contrast(1.08);
+}
+
+html.accessibility-dark-contrast body {
+  background: #111111 !important;
+  color: #f5f5f5 !important;
+}
+
+html.accessibility-dark-contrast *:not(.accessibility-button):not(.accessibility-panel):not(.accessibility-header):not(.close-accessibility):not(.accessibility-content):not(.accessibility-content button):not(.accessibility-content section):not(.reading-guide):not(.reading-mask):not(.vlibras-button-wrapper):not(.vw-plugin-top-wrapper):not(.enabled) {
+  background-color: #171717 !important;
+  color: #f5f5f5 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  box-shadow: none !important;
+}
+
+html.accessibility-dark-contrast .accessibility-button,
+html.accessibility-dark-contrast .accessibility-panel,
+html.accessibility-dark-contrast .accessibility-header,
+html.accessibility-dark-contrast .close-accessibility,
+html.accessibility-dark-contrast .accessibility-content,
+html.accessibility-dark-contrast .accessibility-content button,
+html.accessibility-dark-contrast .reset-accessibility,
+html.accessibility-dark-contrast .vlibras-button-wrapper,
+html.accessibility-dark-contrast .vw-plugin-top-wrapper,
+html.accessibility-dark-contrast .reading-guide,
+html.accessibility-dark-contrast .reading-mask {
+  background-color: inherit !important;
+  color: inherit !important;
+  border-color: inherit !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+html.accessibility-dark-contrast img,
+html.accessibility-dark-contrast video,
+html.accessibility-dark-contrast svg,
+html.accessibility-dark-contrast canvas {
+  background-color: transparent !important;
+  filter: brightness(0.8) contrast(1.12);
+}
+
+html.accessibility-invert {
+  filter: invert(1);
+}
+
+html.accessibility-grayscale {
+  filter: grayscale(100%);
+}
+
+html.accessibility-high-saturation {
+  filter: saturate(200%);
+}
+
+.accessibility-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #805bb1 0%, #64418f 100%);
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(122, 89, 184, 0.35);
+  z-index: 9999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.accessibility-button svg {
+  width: 30px;
+  height: 30px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+html.accessibility-high-contrast .accessibility-button svg,
+html.accessibility-dark-contrast .accessibility-button svg {
+  stroke: #fff !important;
+}
+
+.accessibility-button:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(88, 54, 130, 0.48);
+}
+
+.accessibility-button:focus-visible,
+.accessibility-content button:focus-visible,
+.close-accessibility:focus-visible {
+  outline: 3px solid #f4c542;
+  outline-offset: 3px;
+}
+
+.vlibras-button-wrapper {
+  position: fixed !important;
+  right: 24px !important;
+  bottom: 94px !important;
+  z-index: 10000 !important;
+}
+
+.accessibility-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 95px;
+  width: min(330px, calc(100vw - 32px));
+  max-height: 76vh;
+  max-height: min(76dvh, 720px);
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+  overflow: hidden;
+  z-index: 9998;
+  font-family: Arial, sans-serif;
+}
+
+.accessibility-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  background: linear-gradient(135deg, #9266bb 0%, #7e5eb5 100%);
+  color: #fff;
+}
+
+.accessibility-header div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.accessibility-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.accessibility-icon {
+  font-size: 25px;
+}
+
+.close-accessibility {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.accessibility-content {
+  padding: 16px;
+  max-height: calc(76vh - 70px);
+  min-height: 0;
+  overflow-y: auto;
+  font-family: "Playfair Display", serif;
+}
+
+.accessibility-content section {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.accessibility-content h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.accessibility-content section > button,
+.font-buttons button,
+.line-buttons button,
+.reset-accessibility {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 12px;
+  margin-bottom: 7px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fafafa;
+  color: #1e1e1e;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.accessibility-content section > button:hover,
+.font-buttons button:hover,
+.line-buttons button:hover,
+.reset-accessibility:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.accessibility-content button.active {
+  background: #5b367a;
+  color: #fff;
+  border-color: #5b367a;
+}
+
+.accessibility-content button:disabled {
+  color: #666;
+  background: #eee;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.font-buttons,
+.line-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.font-buttons button,
+.line-buttons button {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.font-buttons button span,
+.line-buttons button span {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.font-size-display {
+  min-width: 58px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.reset-accessibility {
+  background: #222;
+  color: #fff;
+  text-align: center;
+}
+
+.reading-guide {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 3px;
+  background: #66bb6a;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 9997;
+  box-shadow: 0 -25px 0 rgba(102, 187, 106, 0.12), 0 25px 0 rgba(102, 187, 106, 0.12);
+}
+
+.reading-mask {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9996;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.65) 42%,
+    transparent 42%,
+    transparent 58%,
+    rgba(0, 0, 0, 0.65) 58%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+@media (max-width: 600px) {
+  .accessibility-button {
+    right: max(15px, env(safe-area-inset-right));
+    bottom: max(15px, env(safe-area-inset-bottom));
+    width: 52px;
+    height: 52px;
+  }
+
+  .accessibility-button svg {
+    width: 27px;
+    height: 27px;
+  }
+
+  .vlibras-button-wrapper {
+    right: 24px !important;
+    bottom: 94px !important;
+  }
+
+  .accessibility-panel {
+    right: max(12px, env(safe-area-inset-right));
+    left: max(12px, env(safe-area-inset-left));
+    bottom: calc(78px + env(safe-area-inset-bottom));
+    width: auto;
+    max-height: calc(100vh - 110px);
+    max-height: calc(100dvh - 110px - env(safe-area-inset-bottom));
+  }
+
+  .accessibility-content {
+    max-height: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accessibility-button,
+  .accessibility-content section > button,
+  .font-buttons button,
+  .line-buttons button,
+  .reset-accessibility {
+    transition: none;
+  }
+}

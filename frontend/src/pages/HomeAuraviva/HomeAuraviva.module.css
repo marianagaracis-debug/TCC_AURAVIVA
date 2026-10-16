@@ -1,0 +1,538 @@
+.page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.heroVideo,
+.about,
+.cards,
+.faqContainer,
+.contato,
+.siteFooter {
+  position: relative;
+  z-index: 1;
+}
+
+.heroVideo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 8% 8% 4%;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.videoBg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.48);
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1.8s ease;
+}
+
+.heroContent h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.1;
+  margin: 0;
+  text-align: left;
+}
+
+.heroContent h1 span {
+  color: #66bb6a;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 32px;
+  background: #66bb6a;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #4caf50;
+  transform: scale(1.05);
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about {
+  max-width: 980px;
+  margin: 40px auto 0;
+  padding: 48px 7%;
+  text-align: center;
+  color: #fff;
+  background: rgba(16, 34, 24, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 20px;
+  backdrop-filter: blur(2px);
+}
+
+.about h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.about p {
+  margin: 0 auto 16px;
+  max-width: 760px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  padding: 60px 10% 30px;
+  overflow-x: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: min(300px, 100%);
+  background: #ffffff9c;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(59, 59, 59, 0.288);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin-top: 15px;
+  color: #2e7d32;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card p {
+  flex: 1;
+  padding: 0 15px;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.card .btn {
+  margin: 20px auto;
+  display: inline-block;
+  align-self: center;
+}
+
+.faqContainer {
+  width: min(90%, 760px);
+  margin: 60px auto 40px;
+  padding: 32px 24px 12px;
+  font-family: 'Playfair Display', serif;
+  background: rgba(13, 25, 20, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  backdrop-filter: blur(2px);
+}
+
+.faqTitle {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  margin-bottom: 30px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.faq {
+  background-color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 15px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.pergunta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pergunta:hover {
+  background-color: rgba(0, 128, 0, 0.35);
+}
+
+.pergunta span {
+  font-size: 24px;
+  color: #66bb6a;
+}
+
+.resposta {
+  display: none;
+  padding: 0 20px 20px;
+  color: #fff;
+  line-height: 1.6;
+  font-family: 'Playfair Display', serif;
+}
+
+.ativo .resposta {
+  display: block;
+}
+
+.contato {
+  padding: 80px 10% 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+
+.overlay {
+  width: min(100%, 600px);
+  background: rgba(0, 0, 0, 0.56);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+}
+
+.overlay h2 {
+  margin-bottom: 15px;
+  color: #a5d6a7;
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.overlay > p {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.05rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.linha {
+  display: flex;
+  gap: 15px;
+}
+
+.linha input {
+  flex: 1;
+}
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  transition: 0.3s;
+}
+
+.formulario input::placeholder,
+.formulario textarea::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  outline: none;
+  border-color: #a5d6a7;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 8px rgba(68, 250, 78, 0.2);
+}
+
+.formulario textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.formulario button {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #95c097 0%, #0b180b 100%);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formulario button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 187, 106, 0.3);
+}
+
+.siteFooter {
+  margin-top: 40px;
+  background: rgba(0, 0, 0, 0.52);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  backdrop-filter: blur(2px);
+}
+
+.footerColumns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+}
+
+.footerCol {
+  min-height: 295px;
+  padding: 30px 24px 36px;
+  background: rgba(21, 91, 91, 0.72);
+}
+
+.footerCol:nth-child(2),
+.footerCol:nth-child(4) {
+  background: #287474;
+}
+
+.footerIcon {
+  display: block;
+  margin: 0 auto 18px;
+  color: #fff;
+  font-size: 52px;
+  line-height: 1;
+  text-align: center;
+}
+
+.footerCol h3,
+.subscribeBox h3,
+.paymentInfo h3 {
+  margin: 0 0 20px;
+  color: #f3d536;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.footerCol p,
+.footerCol li,
+.footerCol a,
+.paymentInfo p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.footerCol p {
+  margin: 0 0 4px;
+  text-align: left;
+}
+
+.footerCol ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.footerCol a {
+  text-decoration: none;
+}
+
+.footerCol a:hover {
+  color: #f3d536;
+}
+
+.footerBottom {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.subscribeBox,
+.paymentInfo {
+  min-height: 220px;
+  padding: 34px 30px;
+}
+
+.subscribeBox {
+  position: relative;
+  background: #064848;
+}
+
+.paymentInfo {
+  background: #287474;
+}
+
+.subscribeIcon {
+  position: absolute;
+  top: 34px;
+  left: 30px;
+  color: #fff;
+  font-size: 52px;
+  line-height: 1;
+}
+
+.subscribeBox h3,
+.paymentInfo h3 {
+  text-align: left;
+}
+
+.subscribeBox h3 {
+  text-align: center;
+}
+
+.subscribeBox form {
+  display: flex;
+  max-width: 470px;
+  margin: 28px 0 0;
+}
+
+.subscribeBox input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 16px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.subscribeBox input::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.subscribeBox button {
+  padding: 12px 18px;
+  border: 0;
+  background: #fff;
+  color: #155b5b;
+  cursor: pointer;
+}
+
+.paymentInfo p {
+  max-width: 320px;
+}
+
+.paymentBrands {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(54px, 1fr));
+  gap: 10px;
+  max-width: 330px;
+  margin-top: 20px;
+}
+
+.paymentBrand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  padding: 5px 7px;
+  border-radius: 3px;
+  background: #fff;
+  color: #155b5b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+
+.mastercard {
+  color: #eb1c24;
+}
+
+.elo {
+  color: #111;
+  background: #f4c529;
+}
+
+.pix {
+  color: #087f75;
+}
+
+.paypal {
+  color: #123f91;
+}
+
+@media (max-width: 700px) {
+  .footerColumns,
+  .footerBottom {
+    grid-template-columns: 1fr;
+  }
+
+  .footerCol,
+  .subscribeBox,
+  .paymentInfo {
+    min-height: auto;
+  }
+
+  .linha {
+    flex-direction: column;
+  }
+}
