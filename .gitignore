@@ -1,0 +1,29 @@
+# Dependencias e builds
+node_modules/
+target/
+dist/
+build/
+.cache/
+.vite/
+vite.config.*.timestamp-*
+*.tsbuildinfo
+
+# Segredos locais (nunca versionar senhas)
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDEs e sistema (a pasta .vscode/ guarda so as tarefas compartilhadas)
+.idea/
+.vscode/*
+!.vscode/tasks.json
+!.vscode/extensions.json
+.vs/
+*.iml
+.DS_Store
+Thumbs.db

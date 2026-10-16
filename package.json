@@ -1,0 +1,11 @@
+{
+  "name": "tcc-mari-auraviva",
+  "private": true,
+  "description": "AuraViva - TCC (atalhos para rodar o frontend a partir da raiz)",
+  "scripts": {
+    "predev": "npm --prefix frontend install --no-audit --no-fund",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint"
+  }
+}
